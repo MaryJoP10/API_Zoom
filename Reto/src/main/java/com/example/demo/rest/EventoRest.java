@@ -31,4 +31,4 @@ public class EventoRest {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 	}
-}
+}		
