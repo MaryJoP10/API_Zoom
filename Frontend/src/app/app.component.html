@@ -1,10 +1,18 @@
-<form [formGroup]= "eventForm" (ngSubmit)="save">
-<div class="Form">
-  <label>ID</label>
-  <input type="text" formControlName="nombre" class="FormCon">
-  <label>Nombre</label>
-  <input type="text" formControlName="nombre" class="FormCon">
-  <label>Fecha</label>
-  <input type="text" formControlName="nombre" class="FormCon">
+<div class=cuadro>
+  <h1>Crear evento</h1>
+  <form [formGroup]="eventForm" (ngSubmit)="save">
+    <div class="formgroup">
+      <label>ID</label>
+      <input type="text" placeholder="ID del evento" formControlName="id">
+    </div>
+    <div class="formgroup">
+      <label>Nombre</label>
+      <input type="text" placeholder="Nombre del evento" formControlName="nombre">
+    </div>
+    <div class="formgroup">
+      <label>Fecha</label>
+      <input type="datetime-local" formControlName="fecha">
+    </div>
+    <button type="submit">Crear evento</button>
+  </form>
 </div>
-</form>

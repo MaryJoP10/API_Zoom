@@ -1,5 +1,5 @@
 package com.example.demo.model;
-import java.util.*;
+import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,10 +11,10 @@ public class Evento {
 	@Id
 	private char id;
 	private String nombre;
-	private Date fecha;
+	private LocalDateTime fecha;
 	
 	//Constructores//
-	public Evento(char id, String nombre, Date fecha) {
+	public Evento(char id, String nombre, LocalDateTime fecha) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -36,10 +36,10 @@ public class Evento {
 		this.nombre = nombre;
 	}
 	
-	public Date getFecha() {
+	public LocalDateTime getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
 	}
 	

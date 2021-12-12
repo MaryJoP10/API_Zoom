@@ -11,11 +11,11 @@ export class AppComponent implements OnInit{
   //Variables//
   eventForm: FormGroup;
   evento: any;
+  title: any;
   
   constructor( //declarar elementos
     public form: FormBuilder,
     public eventService: EventosService
-    //public eventForm: FormGroup,//
   ){
 
   }
