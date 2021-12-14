@@ -1,25 +1,16 @@
 package com.example.demo.model;
-import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table ( name = "Eventos_Zoom")
+@Table ( name = "eventos_zoom")
 public class Evento {
 	//Atributos//
 	@Id
 	private String id;
 	private String nombre;
-	private LocalDateTime fecha;
-	
-	//Constructores//
-	public Evento(String id, String nombre, LocalDateTime fecha) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.fecha = fecha;
-	}
+	private String fecha;
 	
 	//Accesores//
 	public String getId() {
@@ -36,10 +27,10 @@ public class Evento {
 		this.nombre = nombre;
 	}
 	
-	public LocalDateTime getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
-	public void setFecha(LocalDateTime fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 	
