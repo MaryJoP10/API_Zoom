@@ -25,11 +25,19 @@ export class AppComponent implements OnInit {
       nombre: ['', Validators.required],
       fecha: ['', Validators.required],
     });;
+
+    //Recibir eventos
+    this.eventService.getAllEventos().subscribe(resp => {
+      this.evento = resp;
+    },
+      error => { console.error(error) }
+    );
   }
 
   save(): void {
     this.eventService.saveEvent(this.eventForm.value).subscribe(resp => {
-
+      this.eventForm.reset();
+      this.evento.push(resp);
     },
       error => { console.error(error) }
     );
