@@ -1,5 +1,7 @@
 //Modificar las operaciones utilizadas en el repositorio//
 package com.example.demo.service;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.model.Evento;
@@ -16,8 +18,8 @@ public class EventoServiceImplement implements EventoService{
 		eventoRepo.save(evento);
 	}
 	
-	/*@Override
+	@Override
 	public List<Evento> findAll() {
 		return eventoRepo.findAll();
-	}*/
+	}
 }

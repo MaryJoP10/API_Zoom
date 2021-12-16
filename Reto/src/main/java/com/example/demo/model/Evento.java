@@ -12,6 +12,7 @@ public class Evento {
 	@Id
 	private String id;
 	private String nombre;
+	//private int tipo = 2; 
 	private LocalDateTime fecha;
 	
 	//Accesores//

@@ -1,39 +1,43 @@
-<div class=cuadro>
-  <h1>Crear evento</h1>
-  <form [formGroup]="eventForm" (ngSubmit)="save()">
-    <div class="formgroup">
-      <label>ID</label>
-      <input type="text" placeholder="ID del evento" formControlName="id">
-    </div>
-    <div class="formgroup">
-      <label>Nombre</label>
-      <input type="text" placeholder="Nombre del evento" formControlName="nombre">
-    </div>
-    <div class="formgroup">
-      <label>Fecha</label>
-      <input type="datetime-local" formControlName="fecha">
-    </div>
-    <button type="submit">Crear evento</button>
-  </form>
-</div>
+<!DOCTYPE html>
+<html>
 
-<!-- <div>
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre del evento</th>
-        <th>Fecha del evento</th>
-        <th>Link ingreso anfitrión</th>
-        <th>Link ingreso invitados</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let item of evento">
-      <tr>
-        <th>{{item.nombre}}</th>
-        <th>{{item.fecha}}</th>
-        <th>{{item}}</th>
-        <th>{{item}}</th>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
+<body>
+  <div class="cuadro">
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+    <div class="form">
+      <form [formGroup]="eventForm" (ngSubmit)="save()">
+        <label for="chk" class="crear">Crear evento</label>
+        <input type="text" placeholder="ID del evento" formControlName="id">
+        <input type="text" placeholder="Nombre del evento" formControlName="nombre">
+        <h3>Fecha y hora del evento</h3>
+        <input type="datetime-local" formControlName="fecha">
+        <button type="submit" [disabled]="eventForm.invalid">Crear evento</button>
+      </form>
+    </div>
+
+    <div class="list">
+      <label for="chk" aria-hidden="true">Futuros eventos</label>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre del evento</th>
+            <th>Fecha del evento</th>
+            <th>Link anfitrión</th>
+            <th>Link invitados</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of evento">
+          <tr>
+            <td>{{item.nombre}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

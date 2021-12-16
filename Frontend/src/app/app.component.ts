@@ -16,9 +16,8 @@ export class AppComponent implements OnInit {
   constructor( //declarar elementos
     public form: FormBuilder,
     public eventService: EventosService
-  ) {
-
-  }
+  ) { }
+  
   ngOnInit(): void {
     this.eventForm = this.form.group({
       id: ['', Validators.required],
